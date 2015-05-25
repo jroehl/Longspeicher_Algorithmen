@@ -40,7 +40,7 @@ class LongSpeicher40 implements LongSpeicher {
 	}
 
 	@Override
-	public boolean fuegeEin(long n) { // statt am Anfang bei EDK
+	public boolean fuegeEin(long n) { // statt am Anfang bei EDK (edeka HAHAHA)
 		Knoten vorg = vorgaenger(n);
 		vorg.next = new Knoten(vorg.next, n);
 
