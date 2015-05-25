@@ -59,7 +59,15 @@ class LongSpeicher40 implements LongSpeicher {
 
 	@Override
 	public boolean istDrin(long n) {
-		return (vorgaenger(n).next != EDK);
+		// return (vorgaenger(n).next != EDK);
+		while (vorgaenger(n).next != EDK) {
+
+			if (vorgaenger(n).next.data == n) {
+				return true;
+			}
+			vorgaenger(n).next = vorgaenger(n).next.next;
+		}
+		return false;
 	}
 
 	// ist das selbe wie:
@@ -68,18 +76,28 @@ class LongSpeicher40 implements LongSpeicher {
 	// }
 	// return false;.. jedoch ohne if-Anweisung!!!!
 
-	static public void main(String[] args) { // Main Methode fügt versch Werte
-												// ein und lässt sich dann
-												// Vorgaenger von Werten
-												// ausgeben
-		LongSpeicher40 lo40 = new LongSpeicher40();
-		lo40.fuegeEin(12);
-		lo40.fuegeEin(55);
-		lo40.fuegeEin(8);
-		lo40.fuegeEin(123);
-		lo40.fuegeEin(0);
-		System.out.println(lo40.vorgaenger(123).data);
+	static public void main(String[] args) {
+		// Main Methode fügt versch Werte
+		// ein und lässt sich dann Vorgaenger von Werten ausgeben
 
+		LongSpeicher40 lo40 = new LongSpeicher40();
+		// lo40.fuegeEin(12);
+		// lo40.fuegeEin(55);
+		// lo40.fuegeEin(8);
+		// lo40.fuegeEin(123);
+		// lo40.fuegeEin(0);
+		// System.out.println(lo40.vorgaenger(2000).data);
+		// System.out.println(lo40.istDrin(0));
+		System.out.println(lo40.istDrin(30));
+		System.out.println(lo40.fuegeEin(30));
+		System.out.println(lo40.istDrin(30));
+		System.out.println(lo40.loesche(30));
+		System.out.println(lo40.istDrin(30));
+
+		// System.out.println(lo40.fuegeEin(50));
+		// System.out.println(lo40.istDrin(50));
+		// System.out.println(lo40.loesche(50));
+		// System.out.println(lo40.istDrin(50));
 	}
 
 }
