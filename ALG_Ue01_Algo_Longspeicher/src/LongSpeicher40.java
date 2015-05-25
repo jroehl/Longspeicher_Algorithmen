@@ -28,9 +28,11 @@ class LongSpeicher40 implements LongSpeicher {
 	private Knoten vorgaenger(long n) {
 		EDK.data = n;
 		Knoten hier = ADK;
-		while (hier.next.data != n)
+		while (hier.next.data != n && n > hier.next.data) { // n muss kleiner
+															// sein als data im
+															// nächsten feld
 			hier = hier.next;
-
+		}
 		return hier;
 		// Liefert den Vorgaenger eines Knotens, der n enthaelt, oder
 		// den Vorgaenger des EDK (falls n in dieser Liste nicht vorkommt).
@@ -65,4 +67,19 @@ class LongSpeicher40 implements LongSpeicher {
 	// return true;
 	// }
 	// return false;.. jedoch ohne if-Anweisung!!!!
+
+	static public void main(String[] args) { // Main Methode fügt versch Werte
+												// ein und lässt sich dann
+												// Vorgaenger von Werten
+												// ausgeben
+		LongSpeicher40 lo40 = new LongSpeicher40();
+		lo40.fuegeEin(12);
+		lo40.fuegeEin(55);
+		lo40.fuegeEin(8);
+		lo40.fuegeEin(123);
+		lo40.fuegeEin(0);
+		System.out.println(lo40.vorgaenger(123).data);
+
+	}
+
 }
