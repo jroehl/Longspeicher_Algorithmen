@@ -38,8 +38,9 @@ class LongSpeicher40 implements LongSpeicher {
 	}
 
 	@Override
-	public boolean fuegeEin(long n) {
-		ADK.next = new Knoten(ADK.next, n);
+	public boolean fuegeEin(long n) { // statt am Anfang bei EDK
+		Knoten vorg = vorgaenger(n);
+		vorg.next = new Knoten(vorg.next, n);
 
 		return true;
 	}

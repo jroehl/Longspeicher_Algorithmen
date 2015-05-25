@@ -30,7 +30,6 @@ class LongSpeicher30 implements LongSpeicher {
 		Knoten hier = ADK;
 		while (hier.next.data != n)
 			hier = hier.next;
-
 		return hier;
 		// Liefert den Vorgaenger eines Knotens, der n enthaelt, oder
 		// den Vorgaenger des EDK (falls n in dieser Liste nicht vorkommt).
