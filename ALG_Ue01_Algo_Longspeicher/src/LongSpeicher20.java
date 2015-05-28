@@ -45,18 +45,20 @@ class LongSpeicher20 implements LongSpeicher {
 			return false;
 		}
 
-		int index = index(n);
+		int ind = index(n);
 		// n!= 0 --> 0 darf sich selbst überschreiben...
-		if (speicher[index] == n && n != 0) {
-			// nfi++;
-			return true;
-		}
+		// if (speicher[ind] == n && n != 0) {
+		// // nfi++;
+		// return true;
+		// }
+		if (ind < nfi && speicher[ind] == n)
+			return false;
 
-		for (int i = nfi - 1; i >= index; i--) {
+		for (int i = nfi - 1; i >= ind; i--) {
 
 			speicher[i + 1] = speicher[i];
 		}
-		speicher[index] = n;
+		speicher[ind] = n;
 		nfi++;
 		return true;
 	}
@@ -66,12 +68,12 @@ class LongSpeicher20 implements LongSpeicher {
 		// Loescht ein Vorkommen von n in diesem Speicher, und liefert true.
 		// Liefert false falls n nicht in diesem Speicher vorkommt.
 
-		int index = index(n);
-		if (index >= speicher.length || speicher[index] != n) {
+		int ind = index(n);
+		if (ind >= nfi || speicher[ind] != n) {
 			return false;
 		}
-		for (int i = index; i <= nfi - 1; i++) {
-			if (i < speicher.length - 1) {
+		for (int i = ind; i <= nfi - 1; i++) {
+			if (i < nfi - 1) {
 				speicher[i] = speicher[i + 1];
 				speicher[i + 1] = 0;
 			}
@@ -107,46 +109,39 @@ class LongSpeicher20 implements LongSpeicher {
 		LongSpeicher20 lsa = new LongSpeicher20(5);
 
 		lsa.print();
-		System.out.println("Füge nun die Zahl 0 ein ");
-		System.out.println(lsa.fuegeEin(0));
-		lsa.print();
-		System.out.println();
-		System.out.println(lsa.istDrin(0));
-
-		System.out.println("Füge nun die Zahl 30 ein ");
-		System.out.println(lsa.fuegeEin(30));
-		lsa.print();
-		System.out.println("Füge nun die Zahl 50 ein ");
-		System.out.println(lsa.fuegeEin(50));
-		lsa.print();
-		System.out.println("Füge nun die Zahl 20 ein ");
-		System.out.println(lsa.fuegeEin(20));
-		lsa.print();
-		System.out.println("Füge nun die Zahl 20 ein ");
-		System.out.println(lsa.fuegeEin(20));
-		lsa.print();
-		System.out.println("Füge nun die Zahl 40 ein ");
-		System.out.println(lsa.fuegeEin(40));
-		lsa.print();
-		System.out.println("Lösche nun die Zahl 30 ein ");
-		System.out.println(lsa.loesche(30));
-		lsa.print();
-		System.out.println("Lösche nun die Zahl 10 ein ");
-		System.out.println(lsa.loesche(10));
-		lsa.print();
-		System.out.println("Lösche nun die Zahl 50 ein ");
-		System.out.println(lsa.loesche(50));
-		lsa.print();
-		System.out.println("Lösche nun die Zahl 50 ein ");
-		System.out.println(lsa.loesche(50));
-		lsa.print();
-		lsa.fuegeEin(80);
+		System.out.println("lsa.fuegeEin(0): " + lsa.fuegeEin(0));
 
 		lsa.print();
-		lsa.loesche(10);
+
+		System.out.println("lsa.fuegeEin(30)" + lsa.fuegeEin(30));
 		lsa.print();
-		lsa.fuegeEin(11);
+
+		System.out.println("lsa.fuegeEin(50)" + lsa.fuegeEin(50));
 		lsa.print();
+
+		System.out.println("lsa.fuegeEin(20)" + lsa.fuegeEin(20));
+		lsa.print();
+
+		System.out.println("lsa.fuegeEin(20)" + lsa.fuegeEin(20));
+		lsa.print();
+
+		System.out.println("lsa.fuegeEin(40)" + lsa.fuegeEin(40));
+		lsa.print();
+
+		System.out.println("lsa.loesche(30)" + lsa.loesche(30));
+		lsa.print();
+
+		System.out.println("lsa.loesche(10)" + lsa.loesche(10));
+		lsa.print();
+
+		System.out.println("lsa.loesche(50)" + lsa.loesche(50));
+		lsa.print();
+
+		System.out.println("lsa.loesche(50)" + lsa.loesche(50));
+		lsa.print();
+		System.out.println("lsa.loesche(13)" + lsa.loesche(13));
+		lsa.print();
+
 		printf("----------------------------------%n");
 		printf("LongSpeicher10: Das war's erstmal!%n");
 	} // main

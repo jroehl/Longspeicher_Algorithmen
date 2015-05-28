@@ -29,13 +29,13 @@ class LongSpeicher10 implements LongSpeicher {
 	public boolean fuegeEin(long n) {
 		// Fuegt n in diesen Speicher ein und liefert true.
 		// Liefert false, wenn n nicht eingefuegt werden konnte.
-		if (nfi < speicher.length) {
-			speicher[nfi] = n;
-			nfi++;
-			return true;
-		}
+		if (nfi == speicher.length)
+			return false;
 
-		return false; // MUSS ERSETZT WERDEN
+		speicher[nfi] = n;
+		nfi++;
+		return true;
+
 	}
 
 	// ---------------------------------------------------------------------
@@ -49,17 +49,14 @@ class LongSpeicher10 implements LongSpeicher {
 			return true;
 		}
 
-		return false; // MUSS ERSETZT WERDEN
+		return false;
 	}
 
 	// ---------------------------------------------------------------------
 	public boolean istDrin(long n) {
 		// Liefert true genau dann wenn n in diesem Speicher vorkommt.
 
-		if (index(n) != -1) {
-			return true;
-		}
-		return false;
+		return index(n) != -1;
 	}
 
 	// ---------------------------------------------------------------------

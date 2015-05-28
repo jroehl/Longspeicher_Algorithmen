@@ -28,6 +28,7 @@ class LongSpeicher40 implements LongSpeicher {
 	private Knoten vorgaenger(long n) {
 		EDK.data = n;
 		Knoten hier = ADK;
+
 		while (hier.next.data != n && n > hier.next.data) { // n muss kleiner
 															// sein als data im
 															// nächsten feld
@@ -43,7 +44,6 @@ class LongSpeicher40 implements LongSpeicher {
 	public boolean fuegeEin(long n) { // statt am Anfang bei EDK (edeka HAHAHA)
 		Knoten vorg = vorgaenger(n);
 		vorg.next = new Knoten(vorg.next, n);
-
 		return true;
 	}
 
@@ -81,23 +81,32 @@ class LongSpeicher40 implements LongSpeicher {
 		// ein und lässt sich dann Vorgaenger von Werten ausgeben
 
 		LongSpeicher40 lo40 = new LongSpeicher40();
-		// lo40.fuegeEin(12);
-		// lo40.fuegeEin(55);
-		// lo40.fuegeEin(8);
-		// lo40.fuegeEin(123);
-		// lo40.fuegeEin(0);
-		// System.out.println(lo40.vorgaenger(2000).data);
-		// System.out.println(lo40.istDrin(0));
-		System.out.println(lo40.istDrin(30));
-		System.out.println(lo40.fuegeEin(30));
-		System.out.println(lo40.istDrin(30));
-		System.out.println(lo40.loesche(30));
-		System.out.println(lo40.istDrin(30));
+		lo40.fuegeEin(12);
+		lo40.fuegeEin(55);
+		lo40.fuegeEin(8);
+		lo40.fuegeEin(123);
+		lo40.fuegeEin(0);
+		System.out
+				.println("lo40.vorgaenger(200): " + lo40.vorgaenger(200).data);
+		System.out
+				.println("lo40.vorgaenger(123): " + lo40.vorgaenger(123).data);
+		System.out.println("lo40.vorgaenger(55): " + lo40.vorgaenger(55).data);
+		System.out.println("lo40.vorgaenger(12): " + lo40.vorgaenger(12).data);
+		System.out.println("lo40.vorgaenger(8): " + lo40.vorgaenger(8).data);
+		System.out.println("lo40.vorgaenger(0): " + lo40.vorgaenger(0).data);
+		System.out.println(" ");
+		System.out.println("lo40.istDrin(30)" + lo40.istDrin(30));
+		System.out.println("lo40.fuegeEin(30)" + lo40.fuegeEin(30));
+		System.out.println("lo40.istDrin(30)" + lo40.istDrin(30));
+		System.out.println("lo40.loesche(30)" + lo40.loesche(30));
+		System.out.println("lo40.istDrin(30)" + lo40.istDrin(30));
+		System.out.println(" ");
+		System.out.println("lo40.istDrin(50)" + lo40.istDrin(50));
+		System.out.println("lo40.fuegeEin(50)" + lo40.fuegeEin(50));
+		System.out.println("lo40.istDrin(50)" + lo40.istDrin(50));
+		System.out.println("lo40.loesche(50)" + lo40.loesche(50));
+		System.out.println("lo40.istDrin(50)" + lo40.istDrin(50));
 
-		// System.out.println(lo40.fuegeEin(50));
-		// System.out.println(lo40.istDrin(50));
-		// System.out.println(lo40.loesche(50));
-		// System.out.println(lo40.istDrin(50));
 	}
 
 }
