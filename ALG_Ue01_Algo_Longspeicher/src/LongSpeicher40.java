@@ -105,6 +105,7 @@ class LongSpeicher40 implements LongSpeicher {
 		System.out.println("lo40.fuegeEin(50)" + lo40.fuegeEin(50));
 		System.out.println("lo40.istDrin(50)" + lo40.istDrin(50));
 		System.out.println("lo40.loesche(50)" + lo40.loesche(50));
+		System.out.println("lo40.loesche(50)" + lo40.loesche(50));
 		System.out.println("lo40.istDrin(50)" + lo40.istDrin(50));
 
 	}
