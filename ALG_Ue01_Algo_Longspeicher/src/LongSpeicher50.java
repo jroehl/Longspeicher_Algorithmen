@@ -19,7 +19,9 @@ class LongSpeicher50 implements LongSpeicher {
 
    static protected class RefK {
       Knoten k;
-      RefK(Knoten k) {this.k = k;}               // Konstruktor
+      RefK(Knoten k){ 
+      this.k = k;
+      }               // Konstruktor
    }
    // ---------------------------------------------------------------------
    // Ein leerer Baum besteht aus einem End-Dummy-Knoten EDK.
