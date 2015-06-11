@@ -6,7 +6,7 @@ import junit.framework.TestCase; // Eine Test-Klasse
 public class LongSpeicher_Jut extends TestCase {
 	// ---------------------------------------------------------------------
 	// Der volle Name der zu testenden Klasse ("mit allen Paketen"):
-	final static String KLASSEN_NAME = "LongSpeicher20";
+	final static String KLASSEN_NAME = "LongSpeicher40";
 
 	// ---------------------------------------------------------------------
 	public LongSpeicher_Jut() {

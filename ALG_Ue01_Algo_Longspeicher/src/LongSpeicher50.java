@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * ###########################################################################
  * Projekt 5: Sammeln in einem binÃ¤ren Baum
@@ -7,6 +8,8 @@
  * 4.  Vorgaben
  */
 
+=======
+>>>>>>> 2ea34df23874a6980e7c621198e67c00bd9dad25
 class LongSpeicher50 implements LongSpeicher {
    // ---------------------------------------------------------------------
    // Zum Ein-/Ausschalten von Testbefehlen:
@@ -28,7 +31,13 @@ class LongSpeicher50 implements LongSpeicher {
 
    static protected class RefK {
       Knoten k;
+<<<<<<< HEAD
       RefK(Knoten k) {this.k = k;}               // Konstruktor
+=======
+      RefK(Knoten k){ 
+      this.k = k;
+      }               // Konstruktor
+>>>>>>> 2ea34df23874a6980e7c621198e67c00bd9dad25
    }
    // ---------------------------------------------------------------------
    // Ein leerer Baum besteht aus einem End-Dummy-Knoten EDK.
@@ -52,6 +61,7 @@ class LongSpeicher50 implements LongSpeicher {
       // versprochen hat.
 
       if (n < hier.k.data) {
+<<<<<<< HEAD
     	  								// links weitersuchen
       } else if (n > hier.k.data) {
     	  								// rechts weitersuchen
@@ -62,6 +72,15 @@ class LongSpeicher50 implements LongSpeicher {
    }
    // ---------------------------------------------------------------------
 
+=======
+         ...                           // links weitersuchen
+      } else if (n > hier.k.data) {
+         ...                           // rechts weitersuchen
+      } else {                         // jetzt gilt n == hier.k.data
+         ...
+      }
+   }
+>>>>>>> 2ea34df23874a6980e7c621198e67c00bd9dad25
 
 @Override
 public boolean fuegeEin(long n) {
@@ -79,5 +98,11 @@ public boolean loesche(long n) {
 public boolean istDrin(long n) {
 	// TODO Auto-generated method stub
 	return false;
+<<<<<<< HEAD
 } 
+=======
+}
+   // ---------------------------------------------------------------------
+   ...
+>>>>>>> 2ea34df23874a6980e7c621198e67c00bd9dad25
 }
